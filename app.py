@@ -12,10 +12,10 @@ import boto3
 import math
 
 
-def running(file, comp_file):
+def running(file, comp_file,fname):
     
     bucketname = file # replace with your bucket name
-    filename ='1585145540741.jpg' # replace with your object key
+    filename =fname # replace with your object key
     ext = str(filename[len(filename)-4:len(filename)])
     client = boto3.client('s3',aws_access_key_id='AKIAJA5O2DUFZAPU6BAQ',aws_secret_access_key='8xnMVqXeIK/WWq8Lh+DEYuLa1AqfRPzhNf/HkhqA')
     s3 = boto3.resource('s3')
@@ -66,7 +66,8 @@ def run():
     Main Function to run the compression
     '''
     
-    print(argv[1])
+    print(argv[2])
+    fname=argv[2]
     file =[]
     file.append(argv[1])
     # create_folder()
@@ -80,7 +81,7 @@ def run():
             if x[j] == '/':
                 ind = j
         file2 = "Compressed_Images/"+file[i][ind+1:len(x)-4]+"_compressed"    # create the path inorder to save the  compressed image in the created folder
-        ans1 = running(file[i], file2)                                       # The function to compress the image which returns the compression ratio
+        ans1 = running(file[i], file2,fname)                                       # The function to compress the image which returns the compression ratio
     
         '''
         Finds the maximum compression and minimum compression ratio when multiple images are selected
