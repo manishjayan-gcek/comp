@@ -4,7 +4,7 @@ import utils as util
 import numpy as np
 import PIL
 import time
-from PIL import Image, ImageEnhance,ImageTk
+from PIL import Image, ImageEnhance
 from sys import argv
 import boto3
 
