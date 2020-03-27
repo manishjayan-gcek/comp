@@ -31,7 +31,7 @@ def running(file, comp_file,fname):
     print(comp_file)
     print(image.save(comp_file))   
                             # Saves the image
-
+    s3.Object(bucketname,comp_file).upload_file(Filename=comp_file)
     enhancer = ImageEnhance.Brightness(image)
     image = enhancer.enhance(2)
    
