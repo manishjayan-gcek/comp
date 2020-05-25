@@ -17,7 +17,7 @@ def running(file, comp_file,fname):
     bucketname = file # replace with your bucket name
     filename =fname # replace with your object key
     ext = str(filename[len(filename)-4:len(filename)])
-    client = boto3.client('s3',aws_access_key_id='AKIAJA5O2DUFZAPU6BAQ',aws_secret_access_key='8xnMVqXeIK/WWq8Lh+DEYuLa1AqfRPzhNf/HkhqA')
+    client = boto3.client('s3',aws_access_key_id='AKIAI4PDA5DKFN6FARNA',aws_secret_access_key='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')
     s3 = boto3.resource('s3')
     temp='temp'+ext
     s3.Bucket(bucketname).download_file(filename, temp)
